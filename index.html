@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Security Break-Even Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .calculator {
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin: 10px 0;
+        }
+        label {
+            display: inline-block;
+            width: 200px;
+        }
+        input {
+            width: 150px;
+            padding: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #results {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        canvas {
+            margin-top: 20px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Social Security Break-Even Calculator</h1>
+    <div class="calculator">
+        <div class="input-group">
+            <label for="benefit62">Age 62 Monthly Benefit ($):</label>
+            <input type="number" id="benefit62" value="2483" step="0.01" min="0">
+        </div>
+        <div class="input-group">
+            <label for="benefit67">Age 67 Monthly Benefit ($):</label>
+            <input type="number" id="benefit67" value="3526" step="0.01" min="0">
+        </div>
+        <div class="input-group">
+            <label for="startDate">Start Date (MM/DD/YYYY):</label>
+            <input type="text" id="startDate" value="02/18/2026" placeholder="MM/DD/YYYY">
+        </div>
+        <div class="input-group">
+            <label for="inflationRate">Annual Inflation Rate (%):</label>
+            <input type="number" id="inflationRate" value="2.5" step="0.1" min="0">
+        </div>
+        <button onclick="calculateBreakEven()">Calculate</button>
+    </div>
+    <div id="results"></div>
+    <canvas id="breakEvenChart"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
